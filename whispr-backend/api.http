@@ -1,0 +1,23 @@
+### Register New User
+POST http://127.0.0.1:8000/auth/users/
+Content-Type: application/json
+
+{
+  "email": "julius@example.com",
+  "password": "TestPass123!",
+  "re_password": "TestPass123!",
+  "name": "julius"
+}
+
+### Login - JWT Token
+POST http://127.0.0.1:8000/auth/jwt/create/
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "TestPass123!"
+}
+
+### Get Current User Info
+GET http://127.0.0.1:8000/auth/users/me/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUzMTgxNzA2LCJpYXQiOjE3NTMxODE0MDYsImp0aSI6IjZkMjU4NTFiZWQ2NTQ3ZGJiYjc0ZjFiNTQxOTRhMzgyIiwidXNlcl9pZCI6MX0.gjF2B-MmutuoMF6GhwzyESedpuYLzgV1tIpX2gfS-5U
